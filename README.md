@@ -10,6 +10,12 @@
   * Steven Boston
 
 ### Attribution
+#### Music: 
+[REPULSIVE - Forgotten](https://www.youtube.com/watch?v=pc2MbqAFf7U)
+
+#### Images: 
+=======
+### Attribution
 
 Many tactics from [W3Schools](https://www.w3schools.com/)
 
