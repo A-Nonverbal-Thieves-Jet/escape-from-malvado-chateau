@@ -1,0 +1,54 @@
+#room2 {
+  display: grid;
+  grid-template-columns: 1.7fr 1.65fr .8fr .35fr .2fr .6fr .75fr 3.55fr;
+  grid-template-rows: 1.5fr 1.35fr .5fr .5fr .5fr .7fr .65fr 1.25fr;
+}
+
+img {
+  height: auto;
+  width: 100%;
+  grid-column: 1/9;
+  grid-row: 1/9;
+}
+
+#col1 {
+  grid-column: 1/2;
+  grid-row: 1/9;
+}
+
+#shadow1 {
+  grid-column: 2/3;
+  grid-row: 3/9;
+}
+
+#col3 {
+  grid-column: 3/4;
+  grid-row: 1/9;
+}
+
+#lamp {
+  grid-column: 4/5;
+  grid-row: 4/5;
+}
+
+#screen {
+  grid-column: 4/6;
+  grid-row: 5/6;
+}
+
+#light {
+  grid-column: 6/7;
+  grid-row: 2/3;
+}
+
+#chess {
+  grid-column: 6/7;
+  grid-row: 7/8;
+}
+
+#shadow2 {
+  grid-column: 7/8;
+  grid-row: 3/6;
+}
+
+
