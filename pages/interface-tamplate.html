@@ -2,14 +2,21 @@
 <html lang="en">
 <head>
   <title>Malvado Chateau</title>
+
+  <link rel="stylesheet" href="../CSS/reset.css" type="text/css">
+  <link rel="stylesheet" href="../CSS/roomTemplate.css" type="text/css">
+ 
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Tangerine&display=swap" rel="stylesheet">
+
 </head>
 <header>
-  <h2>Escape From Malvado Chateau</h2>
+  <h2 id="title">Escape From Malvado Chateau</h2>
   
-  <h1>Room Name</h1>
+  <h1 id="roomName">Room Name</h1>
 
   <div id="tasks">
-    <button>Hints</button>
+    <button id="hint">Hints</button>
   </div>
 </header>
 <body>
@@ -20,7 +27,7 @@
   <div id="taskbox"></div>
 
   <section id="interface">
-    <p>room text here</p>
+    <p id="textContent">room text here</p>
     <div id="inventory">
       <div id="slot1"></div>
       <div id="slot2"></div>
@@ -28,7 +35,7 @@
     </div>
 
     <div id="audio">
-      <button>Mute</button>
+      <button id="muteButton"><img src="../images/music-on.png" id ="muteImg" ></button>
       <audio src="../audio/REPULSIVE - Forgotten [COPYRIGHT FREE HORROR MUSIC].mp3"></audio>
     </div>
 
