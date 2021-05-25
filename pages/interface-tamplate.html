@@ -27,18 +27,29 @@
   <div id="taskbox"></div>
 
   <section id="interface">
-    <p id="textContent">room text here</p>
+    <div id="textContainer">
+      <p id="textContent">Room text here</p>
+    </div>
     <div id="inventory">
       <div id="slot1"></div>
       <div id="slot2"></div>
       <div id="slot3"></div>
     </div>
 
-    <div id="audio">
-      <button id="muteButton"><img src="../images/music-on.png" id ="muteImg" ></button>
-      <audio src="../audio/REPULSIVE - Forgotten [COPYRIGHT FREE HORROR MUSIC].mp3"></audio>
-    </div>
+     <div id="audio">
+      <button id="playButton"><img onclick="playAudioAndDisplayMuteButton()" src="../images/music-on.png"  class ="muteImg"></button>
+      <button id="pauseButton" style="display:None"><img onclick="pauseAudioAndDisplayPlayButton()" src="../images/music off.png" class ="muteImg" ></button>
+      <audio id = "audioplayer" src="../audio/REPULSIVE - Forgotten [COPYRIGHT FREE HORROR MUSIC].mp3"></audio>
+    </div> 
+     
+
+
+    <!-- <audio id = "audio">
+      <source src = "../audio/REPULSIVE - Forgotten [COPYRIGHT FREE HORROR MUSIC].mp3">
+    </audio>
+      <button id="playPauseBTN" onclick="playpause()"> Play </button>  -->
 
   </section>
+  <script src="../Js/global.js"> </script>
 </body>
 </html>
