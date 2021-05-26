@@ -1,0 +1,126 @@
+header {
+
+  width: 100%;
+  height: 200px;
+  font-size: 5em;
+  color: rgb(229, 209, 128);
+  font-family: 'Tangerine', cursive;
+  margin-top: 100px;
+  text-align: center;
+  font-weight:bolder;
+  
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+
+  
+  }
+  body {
+   background-image: url(../images/Escape.jpg);
+    background-size: cover;
+  }
+
+  header h1 {
+    background-color: rgb(32, 51, 83, 0.75);
+    width: 100%;
+    height: 35%;
+    margin:auto;
+    margin-top:10px;
+    padding-top: 10px;
+    border-top-right-radius: 150px;
+  border-bottom-left-radius: 150px;
+  }
+  #textContainer {
+    width: 100%;
+    font-family: 'Cinzel', serif;
+    text-align: center;
+    
+    background-color: rgb(32, 51, 83, 0.75);
+    width: 100%;
+    height: 35%;
+    font-size: 2.5em;
+    margin: auto;
+    color:rgb(229, 209, 128);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 100px;
+    border-radius: 15px;
+    padding-left: 150;
+    padding-right: 150;
+  }
+ 
+  #text { 
+    width: 50%;
+    text-align: center;
+    margin: auto;
+  }
+
+footer{
+  margin-top: 200px;
+  display: block;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+a {
+  font-family: 'Tangerine', cursive;
+  font-size: 3.5em;
+  font-weight: bolder;
+  background: rgb(32, 51, 83);
+  border-top-right-radius: 150px;
+  border-bottom-left-radius: 150px;
+  padding-left: 20px;
+  padding-top: 5px;
+  padding-right:20px;
+}
+a:link{
+  color: rgb(229, 209, 128);
+  text-decoration: none;
+}
+a:visited{
+  color: rgb(229, 209, 128);
+  text-decoration: none;
+}
+a:hover{
+  color:antiquewhite;
+  text-decoration: none;
+}
+
+#audio{
+  width: 75px;
+  height: 75px;
+  margin-left: 90%;
+  
+}
+
+
+#on {
+  width: 75px;
+  height: 75px;
+  border: rgb(44, 140, 185) solid 3px;
+  border-radius: 50%;
+  
+  
+}
+
+#off{
+  width: 75px;
+  height: 75px;
+  border: rgb(44, 140, 185) solid 3px;
+  border-radius: 50%;
+  
+ 
+}
+button{
+
+  display:contents;
+ 
+  
+}
+#off:hover{
+  border: antiquewhite solid 2px;
+  text-decoration: none;
+}
+
+#on:hover{
+  border: antiquewhite solid 2px;
+  text-decoration: none;
+}
