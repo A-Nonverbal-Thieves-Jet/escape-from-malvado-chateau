@@ -41,8 +41,9 @@
     </div>
 
     <div id="audio">
-      <button>Mute</button>
-      <audio src="../audio/REPULSIVE - Forgotten [COPYRIGHT FREE HORROR MUSIC].mp3"></audio>
+      <button id="playButton"><img onclick="playAudioAndDisplayMuteButton()" src="../images/music-on.png"  class ="muteImg"></button>
+      <button id="pauseButton" style="display:None"><img onclick="pauseAudioAndDisplayPlayButton()" src="../images/music off.png" class ="muteImg" ></button>
+      <audio id = "audioplayer" src="../audio/REPULSIVE - Forgotten [COPYRIGHT FREE HORROR MUSIC].mp3"></audio>
     </div>
 
   </section>

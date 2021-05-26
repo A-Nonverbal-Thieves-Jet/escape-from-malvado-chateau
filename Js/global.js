@@ -36,7 +36,7 @@ function Tool(name,imgpath){
 }
 //method to render tool image to inventory display
 Tool.prototype.render = function(slot) {
-  imgElem = document.createElement('img');
+  let imgElem = document.createElement('img');
   imgElem.setAttribute('src',this.imgpath);
   if(this.used === true){
     imgElem.setAttribute('class','faded');
@@ -72,6 +72,16 @@ function initialize(roomNumber) {
 function addItem(tool) {
   currentInventory.push(tool);
   tool.render(slotArray[currentInventory.length-1]);
+}
+
+//check currentInventory for toolName
+function checkInventory(toolName) {
+  for (tool of currentInventory) {
+    if (tool.name == toolName) {
+      return true
+    }
+  }
+return false
 }
 
 //toggle hint list display

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="../CSS/reset.css">
-  <link rel="stylesheet" href="../CSS/roomTemplate.css">
-  <link rel="stylesheet" href="../CSS/global.css">
-  <link rel="stylesheet" href="../CSS/room3.css">
+  <link rel="stylesheet" href="../CSS/reset.css" type="text/css">
+  <link rel="stylesheet" href="../CSS/roomTemplate.css" type="text/css">
+  <link rel="stylesheet" href="../CSS/global.css" type="text/css">
+  <link rel="stylesheet" href="../CSS/room3.css" type="text/css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Tangerine&display=swap" rel="stylesheet">
   <title>Malvado Chateau</title>
 </head>
 <header>
@@ -13,40 +14,45 @@
   <h1>The Lounge</h1>
 
   <div id="tasks">
-    <button>Hints</button>
+    <button id='hintButton'>Hints</button>
   </div>
 </header>
-<body>
-  <div id="room3">
-    <img id='room3img' src="../images/room-imgs/room3.png" alt="">
-    <div id="col1"></div>
-    <div id="clock"></div>
-    <div id="col3"></div>
-    <div id="portrait"></div>
-    <div id="col5"></div>
-    <div id="doll"></div>
-    <div id="col7"></div>
-    <div id="mirror"></div>
-    <div id="shelf"></div>
-    <div id="door"></div>
-    <div id="rug"></div>
-  </div>
-
-  <div id="taskbox"></div>
-
-  <section id="interface">
-    <p>room text here</p>
-    <div id="inventory">
-      <div id="slot1"></div>
-      <div id="slot2"></div>
-      <div id="slot3"></div>
+  <body>
+    <div id="room3">
+      <img id='room3img' src="../images/room-imgs/room3.png" alt="">
+      <div id="col1"></div>
+      <div id="clock"></div>
+      <div id="col3"></div>
+      <div id="portrait"></div>
+      <div id="sofa"></div>
+      <div id="col5"></div>
+      <div id="doll"></div>
+      <div id="col7"></div>
+      <div id="mirror"></div>
+      <div id="drawer"></div>
+      <div id="door"></div>
+      <div id="rug"></div>
     </div>
 
-    <div id="audio">
-      <button>Mute</button>
-      <audio src="../audio/REPULSIVE - Forgotten [COPYRIGHT FREE HORROR MUSIC].mp3"></audio>
-    </div>
+    <div id="taskbox"></div>
 
-  </section>
-</body>
+    <section id="interface">
+      <div id="textContainer">
+        <p id="textContent">The dark hallways of the Malvado Chateau have deposited you in a lounge crowded with furniture, and inhabited by a lonely doll. There is a door in the corner, standing in the way of further progress.</p>
+      </div>
+      <div id="inventory">
+        <div id="slot1"></div>
+        <div id="slot2"></div>
+        <div id="slot3"></div>
+      </div>
+
+      <div id="audio">
+        <button id="playButton"><img onclick="playAudioAndDisplayMuteButton()" src="../images/music-on.png"  class ="muteImg"></button>
+        <button id="pauseButton" style="display:None"><img onclick="pauseAudioAndDisplayPlayButton()" src="../images/music off.png" class ="muteImg" ></button>
+        <audio id = "audioplayer" src="../audio/REPULSIVE - Forgotten [COPYRIGHT FREE HORROR MUSIC].mp3"></audio>
+      </div>
+    </section>
+  </body>
+  <script src="../Js/global.js"></script>
+  <script src="../Js/room3.js"></script>
 </html>
