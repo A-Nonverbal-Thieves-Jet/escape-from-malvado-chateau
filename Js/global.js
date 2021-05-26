@@ -160,8 +160,8 @@ function playAudioAndDisplayMuteButton() {
   // Display Pause and hide play button
   let pauseButton = document.getElementById('pauseButton');
   let playButton = document.getElementById('playButton');
-  pauseButton.style.display = 'block';
-  playButton.style.display = 'None';
+  pauseButton.style.display = 'contents';
+  playButton.style.display = 'none';
 }
 
 function pauseAudioAndDisplayPlayButton() {
@@ -172,7 +172,7 @@ function pauseAudioAndDisplayPlayButton() {
   let pauseButton = document.getElementById('pauseButton');
   let playButton = document.getElementById('playButton');
   pauseButton.style.display = 'None';
-  playButton.style.display = 'block';
+  playButton.style.display = 'contents';
 }
 
 hintButton.addEventListener('click', displayHints);

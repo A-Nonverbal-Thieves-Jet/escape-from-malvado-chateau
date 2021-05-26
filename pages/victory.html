@@ -2,22 +2,37 @@
 <html lang="en">
 <head>
   <title>Malvado Chateau</title>
-  <link rel="stylesheet" href="./CSS/reset.css">
-  <link rel="stylesheet" href="./CSS/global.css">
+  <link rel="stylesheet" href="../CSS/reset.css">
+  <link rel="stylesheet" href="../CSS/global.css">
+  <link rel="stylesheet" href="../CSS/victory.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Tangerine&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
     <h1>Escape from Malvado Chateau</h1>
   </header>
-  <section id="text">
-    <h1>You did it! You've escaped Malvado Chateau . . .<br> or have you?</h1>
-    <button id="continue">Continue</button>
-  </section>
+  <div id="textContainer">
+    <h2 id="text">You did it!<br></br> You've escaped Malvado Chateau you notice the sounds of birds and wildlife. You have no idea where you are. The chateau seems to have vanished. 
+    </h2>
+  </div>
   <footer>
-   <a href="">Next</a>
-   <div id="Audio"></div>
-   <audio src="../audio/REPULSIVE - Forgotten [COPYRIGHT FREE HORROR MUSIC].mp3"></audio>
+   <a href="../pages/about-us.html">Meet The Team</a>
+  
+   <!-- <audio src="../audio/escapeMusic.mp3"></audio> -->
+   <!-- <audio controls autoplay loop>
+    <source src="../audio/escapeMusic.mp3" type="audio/mp3">
+  </audio> -->
+  <div id="audio">
+    <button id="playButton"><img onclick="playAudioAndDisplayMuteButton()" src="../images/music-on-blue.png"  class ="muteImg" id="on"></button>
+    <button id="pauseButton" style="display:None"><img onclick="pauseAudioAndDisplayPlayButton()" src="../images/music off-blue.png" class ="muteImg" id="off"></button>
+    <audio id = "audioplayer" src="../audio/escapeMusic.mp3"></audio>
+  </div> 
+  
+  </body>
+  </html>
   </footer>
-  <script src="./Js/global.js"></script>
+  <script src="../Js/global.js"></script>
 </body>
 </html>
