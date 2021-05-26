@@ -75,11 +75,11 @@ function addItem(tool) {
 }
 
 //toggle hint list display
-  function displayHints(hintArray) {
+  function displayHints() {
       hintBox.innerHTML = '';
         if(hints == false){
           const ulElem = document.createElement('ul');
-          hintBox.appenChild(ulElem);
+          hintBox.appendChild(ulElem);
 
           for(let i = 0; i < hintArray.length; i++){
             const liElem = document.createElement('li');
@@ -121,6 +121,10 @@ function displayPrompt(text, roomNumber) {
   if (notOk) {
     notOk.remove();
   }
+  const notContinue = document.getElementById('continueButton');
+  if (notContinue) {
+    notContinue.remove();
+  }
   textBox.textContent = text;
   const continueButton = document.createElement('button');
   continueButton.setAttribute('id','continueButton');
@@ -132,7 +136,7 @@ function displayPrompt(text, roomNumber) {
 
 //to redirect it to next page
 function continueClick(){
-  window.replace(nextRoom);
+  window.location = nextRoom;
 }
 
 //toggle audio mute
@@ -171,3 +175,4 @@ function pauseAudioAndDisplayPlayButton() {
   playButton.style.display = 'block';
 }
 
+hintButton.addEventListener('click', displayHints);
