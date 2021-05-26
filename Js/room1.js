@@ -28,6 +28,8 @@ let shadowText = [
   `There are shadows all around you, they fill you with a sense of dread. The specters don't seem to be moving, but they don't seem to come from anything either.`
 ];
 
+const hintArray = ['hint1', 'hint2','hint3','hint4'];
+
 const fireplaceDiv = document.getElementById('fireplace');
 const doorDiv = document.getElementById('door');
 const lightDiv = document.getElementById('light');
