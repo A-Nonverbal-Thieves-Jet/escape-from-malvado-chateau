@@ -16,14 +16,16 @@ const item2 = document.getElementById('slot2');
 const item3 = document.getElementById('slot3');
 const slotArray = [item1, item2, item3];
 let currentInventory = [];
+let roomObjects = [];
 let roomText = '';
 let nextRoom = '';
-
 
 //Define constructor to store text for interactable objects on each room page
 function Interactable(name,textArray){
 this.name = name;
 this.text = textArray;
+this.status1 = false;
+this.status2 = false;
 }
 
 //and one more for collectable item data
@@ -43,14 +45,16 @@ Tool.prototype.render = function(slot) {
 }
 
 //update localStorage with current information
-function updateStorage(){
+function updateStorage(roomNumber){
   const stringInventory = JSON.stringify(currentInventory);
   localStorage.setItem('inventory', stringInventory);
+  const stringObjects = JSON.stringify(roomObjects);
+  localStorage.setItem(roomNumber, stringObjects);
 }
 
 
 //retrieve localStorage with inventory on each page, and display each inventory item. 
-function initialize() {
+function initialize(roomNumber) {
   let playerInventory = localStorage.getItem('inventory');
   if(playerInventory) {
     currentInventory = JSON.parse(playerInventory);
@@ -58,6 +62,10 @@ function initialize() {
       currentInventory[i].render(slotArray[i]);
     }
   } 
+  let stringRoom = localStorage.getItem(roomNumber);
+  if (stringRoom) {
+    roomObjects = JSON.parse(stringRoom);
+  }
 }
 
 //add item to currentInventory on pickup
@@ -88,6 +96,10 @@ function addItem(tool) {
 
 //take text and put it in text box
 function displayText(text) {
+  const notOk = document.getElementById('okButton');
+  if (notOk) {
+    notOk.remove();
+  }
   textBox.textContent = text;
   const okButton = document.createElement('button');
   okButton.setAttribute('id','okButton');
@@ -104,21 +116,24 @@ function okClick(){
 }
 
 //display progression prompt in text box
-function displayPrompt(text) {
+function displayPrompt(text, roomNumber) {
+  const notOk = document.getElementById('okButton');
+  if (notOk) {
+    notOk.remove();
+  }
   textBox.textContent = text;
   const continueButton = document.createElement('button');
   continueButton.setAttribute('id','continueButton');
   continueButton.textContent = 'Continue';
   textContainer.appendChild(continueButton);
   continueButton.addEventListener('click',continueClick);
-  updateStorage();
+  updateStorage(roomNumber);
 }
 
 //to redirect it to next page
 function continueClick(){
-  window.replace('nextRoom');
+  window.replace(nextRoom);
 }
-
 
 //toggle audio mute
 function audioControl() {
@@ -155,3 +170,4 @@ function pauseAudioAndDisplayPlayButton() {
   pauseButton.style.display = 'None';
   playButton.style.display = 'block';
 }
+

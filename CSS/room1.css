@@ -9,17 +9,18 @@
     width: 100%;
     grid-column: 1/8;
     grid-row: 1/6;
+    z-index: -1;
 }
 #col1 {
     grid-column: 1/2;
     grid-row: 1/6;
   }
 
-  #fireplace{
-      grid-column: 2/3;
-      grid-row: 4/5;
+#fireplace{
+    grid-column: 2/3;
+    grid-row: 4/5;
 }
-#hands{
+#shadows{
     grid-column: 2/4;
     grid-row: 1/4;
 }
