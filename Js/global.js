@@ -170,3 +170,4 @@ function pauseAudioAndDisplayPlayButton() {
   pauseButton.style.display = 'None';
   playButton.style.display = 'block';
 }
+
