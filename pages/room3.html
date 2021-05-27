@@ -1,25 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <link rel="stylesheet" href="../CSS/reset.css" type="text/css">
-  <link rel="stylesheet" href="../CSS/roomTemplate.css" type="text/css">
-  <link rel="stylesheet" href="../CSS/global.css" type="text/css">
-  <link rel="stylesheet" href="../CSS/room3.css" type="text/css">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Tangerine&display=swap" rel="stylesheet">
-  <title>Malvado Chateau</title>
-</head>
-<header>
-  <h2>Escape From Malvado Chateau</h2>
-  
-  <h1>The Lounge</h1>
-
-  <div id="tasks">
-    <button id='hintButton'>Hints</button>
-  </div>
-</header>
+  <head>
+    <link rel="stylesheet" href="../CSS/reset.css" type="text/css">
+    <link rel="stylesheet" href="../CSS/roomTemplate.css" type="text/css">
+    <link rel="stylesheet" href="../CSS/global.css" type="text/css">
+    <link rel="stylesheet" href="../CSS/room3.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Tangerine&display=swap" rel="stylesheet">
+    <title>Malvado Chateau</title>
+  </head>
   <body>
+    <header>
+      <h2 id="title">Escape From Malvado Chateau</h2>
+      <h1 id="roomName">The Lounge</h1>
+      <div id="tasks">
+        <button id="hintButton">Hints</button>
+      </div>
+    </header>
     <div id="room3">
-      <img id='room3img' src="../images/room-imgs/room3.png" alt="">
+      <img id='roomimg' src="../images/room-imgs/room3.png" alt="">
       <div id="col1"></div>
       <div id="clock"></div>
       <div id="col3"></div>
@@ -33,24 +31,23 @@
       <div id="door"></div>
       <div id="rug"></div>
     </div>
-
     <div id="taskbox"></div>
-
     <section id="interface">
       <div id="textContainer">
-        <p id="textContent">The dark hallways of the Malvado Chateau have deposited you in a lounge crowded with furniture, and inhabited by a lonely doll. There is a door in the corner, standing in the way of further progress.</p>
+        <p id="textContent">The dark hallways of the Malvado Chateau have deposited you in a lounge crowded with furniture and inhabited by a lonely doll. A door stands in the corner, barring your path.</p>
       </div>
       <div id="inventory">
+        <h3>Inventory</h3>
         <div id="slot1"></div>
         <div id="slot2"></div>
         <div id="slot3"></div>
       </div>
-
+  
       <div id="audio">
-        <button id="playButton"><img onclick="playAudioAndDisplayMuteButton()" src="../images/music-on.png"  class ="muteImg"></button>
-        <button id="pauseButton" style="display:None"><img onclick="pauseAudioAndDisplayPlayButton()" src="../images/music off.png" class ="muteImg" ></button>
+        <button id="playButton"><img onclick="playAudioAndDisplayMuteButton()" src="../images/music-on-blue.png"  class ="muteImg" id="on"></button>
+        <button id="pauseButton" style="display:None"><img onclick="pauseAudioAndDisplayPlayButton()" src="../images/music off-blue.png" class ="muteImg" id="off"></button>
         <audio id = "audioplayer" src="../audio/REPULSIVE - Forgotten [COPYRIGHT FREE HORROR MUSIC].mp3"></audio>
-      </div>
+      </div> 
     </section>
   </body>
   <script src="../Js/global.js"></script>

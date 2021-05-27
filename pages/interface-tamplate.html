@@ -10,14 +10,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Tangerine&display=swap" rel="stylesheet">
 
 </head>
+<body>
 <header>
   <h2 id="title">Escape From Malvado Chateau</h2>
   <h1 id="roomName">Room Name</h1>
   <div id="tasks">
-    <button id="hint">Hints</button>
+    <button id="hintButton">Hints</button>
   </div>
 </header>
-<body>
   <div id="roomx">  
     <img src="../images/room-imgs/room1.png" alt="" id="roomimg">
   </div>
@@ -35,7 +35,7 @@
       <div id="slot3"></div>
     </div>
 
-     <div id="audio">
+    <div id="audio">
       <button id="playButton"><img onclick="playAudioAndDisplayMuteButton()" src="../images/music-on-blue.png"  class ="muteImg" id="on"></button>
       <button id="pauseButton" style="display:None"><img onclick="pauseAudioAndDisplayPlayButton()" src="../images/music off-blue.png" class ="muteImg" id="off"></button>
       <audio id = "audioplayer" src="../audio/REPULSIVE - Forgotten [COPYRIGHT FREE HORROR MUSIC].mp3"></audio>
