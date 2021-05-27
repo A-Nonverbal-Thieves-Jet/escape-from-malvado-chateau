@@ -138,7 +138,7 @@ function clickSofa(){
 }
 
 //--------- objects ----------//
-const lockpick = new Tool ('Lockpicks','');
+const lockpick = new Tool ('Lockpicks','../images/interface-vectors/lockPick-vector.png');
 
 const doll = new Interactable ('doll',dollText);
 const clock= new Interactable ('clock',clockText);
