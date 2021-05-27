@@ -82,6 +82,7 @@ function clickClock() {
     displayText(roomObjects[1].text[2]);
   }
 }
+
 function clickDrawer() {
   console.log('clicked drawer!');
   if (roomObjects[1].status1 == false) {
@@ -90,10 +91,17 @@ function clickDrawer() {
     displayText(roomObjects[2].text[4]);
   } else if (roomObjects[2].status2 == true) {
     displayText(roomObjects[2].text[3]);
+    roomObjects[2].status1 = true;
   } else {
-    if ()
+    if (checkInventory('Lockpicks')) {
+      displayText(roomObjects[2].text[2]);
+      roomObjects[2].status2 = true;
+    } else {
+      displayText(roomObjects[2].text[1]);
+    }
   }
 }
+
 function clickRug(){
   displayText(roomObjects[3].text[0]);
   addItem(lockpick);
@@ -101,14 +109,30 @@ function clickRug(){
 }
 function clickPortrait(){
   console.log('clicked portrait!');
-
+  if (roomObjects[2].status1 == false) {
+    displayText(roomObjects[4].text[0]);
+  } else if (roomObjects[4].status1 == false) {
+    displayText(roomObjects[4].text[1]); 
+    roomObjects[4].status1 = true;
+  } else {
+    displayText(roomObjects[4].text[2]);
+  }
 }
 function clickDoor(){
   console.log('clicked door!');
+  if (roomObjects[4].status1 == true) {
+    displayPrompt(roomObjects[5].text[2],'room3');
+  } else if (checkInventory('Lockpicks')){
+    displayText(roomObjects[5].text[1]);
+  } else {
+    displayText(roomObjects[5].text[0]);
+  }
 }
+
 function clickMirror(){
   displayText(roomObjects[6].text[0]);
 }
+
 function clickSofa(){
   displayText(roomObjects[7].text[0]);
 }

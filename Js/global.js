@@ -76,7 +76,7 @@ function addItem(tool) {
 
 //check currentInventory for toolName
 function checkInventory(toolName) {
-  for (tool of currentInventory) {
+  for (let tool of currentInventory) {
     if (tool.name == toolName) {
       return true
     }
