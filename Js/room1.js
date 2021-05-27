@@ -36,6 +36,8 @@ const lightDiv = document.getElementById('light');
 const chairDiv = document.getElementById('chair');
 const shadowDiv = document.getElementById('shadows');
 
+const room1Div = document.getElementById('room1');
+
 //----------- Functions ------------//
 function clickFireplace() {
   if (roomObjects[0].status1 == false) {
@@ -67,6 +69,14 @@ function clickChair() {
 
 function clickShadow() {
   displayText(roomObjects[4].text[0]);
+}
+
+function transition() {
+  room1Div.innerHTML = '';
+  const newImage = document.createElement('img')
+  newImage.setAttribute('id', 'transition')
+  newImage.setAttribute('src''../images/')
+  room1Div.appendChild(newImage)
 }
 
 //--------- objects ----------//
