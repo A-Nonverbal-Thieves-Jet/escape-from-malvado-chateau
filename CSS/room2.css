@@ -52,4 +52,7 @@
   grid-row: 3/6;
 }
 
-
+#escape {
+  grid-column: 6/7;
+  grid-row: 3/7;
+}
