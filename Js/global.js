@@ -159,6 +159,16 @@ function continueClick(){
   window.location = nextRoom;
 }
 
+//--------- Transition to Hall ---------//
+function transition(div, image, text, room) {
+  div.innerHTML = '';
+  const newImage = document.createElement('img');
+  newImage.setAttribute('id', 'transition');
+  newImage.setAttribute('src', image);
+  room1Div.appendChild(newImage);
+  displayPrompt(text, room);
+}
+
 //toggle audio mute
 function audioControl() {
 

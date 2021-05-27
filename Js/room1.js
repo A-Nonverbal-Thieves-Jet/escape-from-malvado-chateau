@@ -4,6 +4,7 @@
 roomText = "You find yourself in a dingy room. The fire place offers no comfort, and a decrepit chair looms as if occupied. The dim light does little to calm your anxiety as the shadows seem to cling to you."
 
 nextRoom = "room2.html"
+let hall = '../images/hall.png';
 
 let fireplaceText = [
   `You search the inside of the fireplace and see a charred lever in the corner.`,
@@ -27,6 +28,8 @@ let chairText = [
 let shadowText = [
   `There are shadows all around you, they fill you with a sense of dread. The specters don't seem to be moving, but they don't seem to come from anything either.`
 ];
+
+let escapeText = `You proceed down a dark hallway, pushing past your fear. You know you must escape.`
 
 const hintArray = ['hint1', 'hint2','hint3','hint4'];
 
@@ -53,7 +56,10 @@ function clickFireplace() {
 
 function clickDoor() {
   if (roomObjects[0].status2 == true) {
-    displayPrompt(roomObjects[1].text[1]);
+    displayText(roomObjects[1].text[1]);
+    const shiftOk = document.getElementById('okButton');
+    shiftOk.removeEventListener('click',okClick);
+    shiftOk.addEventListener('click', function(){transition(room1Div, hall, escapeText, nextRoom)});
   } else {
     displayText(roomObjects[1].text[0]);
   }
@@ -69,14 +75,6 @@ function clickChair() {
 
 function clickShadow() {
   displayText(roomObjects[4].text[0]);
-}
-
-function transition() {
-  room1Div.innerHTML = '';
-  const newImage = document.createElement('img')
-  newImage.setAttribute('id', 'transition')
-  newImage.setAttribute('src''../images/')
-  room1Div.appendChild(newImage)
 }
 
 //--------- objects ----------//
