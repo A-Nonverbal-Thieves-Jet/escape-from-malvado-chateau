@@ -1,40 +1,37 @@
-header {
-  width: 100%;
-  height: 80px;
-  display: flex;
-  justify-content: space-between;
-  color: rgb(229, 209, 128);
-  
-  font-family: 'Tangerine', cursive;
-  margin-top: 25px;
-  }
-  body{
-    background-color:rgb(32, 51, 83) ;
-    width: 100%;
-    height: 100%;
-    margin: auto;
-  }
-  /* 
-  body  *{
-    border: black solid 1px;
-  } */
-  
-  h1 {
+h1 {
   font-size: 3em;
-  }
-  
-  h2 {
+}
+h2 {
   font-size: 2em;
-  
-  }
-  
-  #title{
-  margin-left: 10px;
+}
+
+body {
+  background-color:rgb(32, 51, 83) ;
+  display:grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 60px 540px 100px;
+}
+
+/* header and children */
+header {
+  grid-column: 1/6;
+  grid-row:1/2;
+  color: rgb(229, 209, 128);
+  font-family: 'Tangerine', cursive;
+  display: grid;
+  grid-template-columns: 15% 25% 20% 25% 15%;
+}
+#title {
   text-align: center;
-  width: 160px;
-  }
-  
-  #hint{
+  grid-column: 1/2;
+}
+#roomName{
+  grid-column: 3/4;
+}
+#tasks {
+  grid-column: 5/6;
+}
+#hint{
   font-size: 2.4em;
   margin-right: 50px;
   font-family: 'Tangerine', cursive;
@@ -42,112 +39,95 @@ header {
   color: rgb(229, 209, 128);
   margin-top: 15px;
   margin-left: 15px;
-  
-  }
-  
-  #textContent{
-    font-family: 'Cinzel', serif;
-    width: 500px;
-    height: 80px;
-    padding-top:20px;
-    padding-left: 20px;
-    padding-right: 20px;
-    background-image: url(../images/interface-vectors/parchment-vector.png);
-    background-size: cover;
-  }
-  
-  #roomx{
-    width: 90%;
-    height: 100%;
-    margin-left: 8%;
-    border: dashed 2px black;
-    display: flex;
-    justify-content: space-between;
-    align-content: space-between;
-  
-  }
-  #interface{
-  margin-top: 100px;
+  grid-column: 5/6;
+  grid-row: 1/2;
+}
+
+/* Room Image & container */
+#roomx{
+  grid-column: 2/5;
+  grid-row: 2/3;
+}
+#roomimg {
+  height:100%;
+}
+
+/* Taskbox for hint display */
+#taskbox {
+  background-image: url(../images/interface-vectors/verticalParchment.png);
+  background-size: cover;
+  height:fit-content;
+  grid-row: 2/3;
+  grid-column: 5/6;
+}
+/* Bottom row game interface */
+#interface{
   display: flex;
   height: 100px;
   background-color:rgb(229, 209, 128);
   color: black;
   border-radius: 5px;
-  
-  }
-  #audio{
-    width: 160px;
-    margin: auto;
-    text-align: center;
-    border-radius: 5px;
-  }
-  
-  #inventory
-  {
-    width: 300px;
-    display: flex;
-    justify-content: space-evenly;
-    padding:18px;
-  
-  
-  }
-  #inventory * {
-    margin-top: 10px;
-    width: 50px;
-    height: 50px;
-    background-color:rgb(144, 133, 89);
-  
-  }
-  
-  #muteImg{
-    width: 50px;
-    height: 50px;
-    border-radius: 5px;
-  } 
-  #on {
-    width: 75px;
-    height: 75px;
-    border: rgb(44, 140, 185) solid 3px;
-    border-radius: 50%;
-    
-    
-  }
-  
-  #off{
-    width: 75px;
-    height: 75px;
-    border: rgb(44, 140, 185) solid 3px;
-    border-radius: 50%;
-    
-   
-  }
-  #audio button{
-    
-    display:contents;
-   
-    
-  }
-  #off:hover{
-    border: antiquewhite solid 2px;
-    text-decoration: none;
-  }
-  
-  #on:hover{
-    border: antiquewhite solid 2px;
-    text-decoration: none;
-  }
-
-#taskbox {
-  
-  background-image: url(../images/interface-vectors/verticalParchment.png);
-  background-size: cover;
- 
-  width: 25%;
-
-  
+  grid-row: 3/4;
+  grid-column: 1/6;
 }
-#roomimg{
- width: 75%;
+#textContent{
+  font-family: 'Cinzel', serif;
+  width: 500px;
+  height: 80px;
+  padding-top:20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-image: url(../images/interface-vectors/parchment-vector.png);
+  background-size: cover;
+}
+#inventory {
+  width: 300px;
+  display: flex;
+  justify-content: space-evenly;
+  padding:18px;
+}
+#inventory * {
+  margin-top: 10px;
+  width: 50px;
+  height: 50px;
+  background-color:rgb(144, 133, 89);  
+}
+/* Audio Controls */
+#audio {
+  width: 160px;
+  margin: auto;
+  text-align: center;
+  border-radius: 5px;
+}
+#muteImg{
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+} 
+#on {
+  width: 75px;
+  height: 75px;
+  border: rgb(44, 140, 185) solid 3px;
+  border-radius: 50%;
+}
 
+#off {
+  width: 75px;
+  height: 75px;
+  border: rgb(44, 140, 185) solid 3px;
+  border-radius: 50%;
+}
 
+#audio button {
+  display:contents;
+}
+
+#off:hover{
+  border: antiquewhite solid 2px;
+  text-decoration: none;
+}
+
+#on:hover{
+  border: antiquewhite solid 2px;
+  text-decoration: none;
 }

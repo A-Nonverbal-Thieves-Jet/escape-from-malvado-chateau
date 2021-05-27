@@ -29,15 +29,15 @@ this.status2 = false;
 }
 
 //and one more for collectable item data
-function Tool(name,imgpath){
+function Tool(name,imgPath){
   this.name = name;
-  this.imgpath = imgpath;
+  this.imgPath = imgPath;
   this.used = false;
 }
 //method to render tool image to inventory display
 Tool.prototype.render = function(slot) {
   let imgElem = document.createElement('img');
-  imgElem.setAttribute('src',this.imgpath);
+  imgElem.setAttribute('src',this.imgPath);
   if(this.used === true){
     imgElem.setAttribute('class','faded');
   }
@@ -57,15 +57,25 @@ function updateStorage(roomNumber){
 function initialize(roomNumber) {
   let playerInventory = localStorage.getItem('inventory');
   if(playerInventory) {
-    currentInventory = JSON.parse(playerInventory);
-    for (let i=0; i<currentInventory.length; i++){
-      currentInventory[i].render(slotArray[i]);
+    let slotCount = 0;
+    let rawInventory = JSON.parse(playerInventory);
+    for (let rawTool of rawInventory) {
+      let newTool = new Tool(rawTool.name, rawTool.imgPath);
+      newTool.used = rawTool.used;
+      currentInventory.push(newTool)
+      newTool.render(slotArray[slotCount]);
+      slotCount++;
     }
   } 
   let stringRoom = localStorage.getItem(roomNumber);
   if (stringRoom) {
     roomObjects = JSON.parse(stringRoom);
   }
+}
+//build a tool
+function makeTool(name, imgPath) {
+  let tool = new Tool(name, imgPath);
+  currentInventory.push(tool);
 }
 
 //add item to currentInventory on pickup
