@@ -165,24 +165,11 @@ function transition(div, image, text, room) {
   const newImage = document.createElement('img');
   newImage.setAttribute('id', 'transition');
   newImage.setAttribute('src', image);
-  room1Div.appendChild(newImage);
+  div.appendChild(newImage);
   displayPrompt(text, room);
 }
 
-//toggle audio mute
-function audioControl() {
-
-}
-
-// function playPause() { 
-//   if(count == 0){
-//     count = 1;
-//     audio.play();
-//   }else{
-//     count=0;audio.pause();
-//   }
-// } 
-
+//----------Audio controls----------//
 function playAudioAndDisplayMuteButton() {
   // To play audio
   document.getElementById('audioplayer').play();

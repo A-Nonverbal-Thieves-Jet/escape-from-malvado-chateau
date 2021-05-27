@@ -4,8 +4,12 @@
 roomText = "An ominous living room waits before you. The inky darkness settling thick on the walls, and edges of the room. Figures peel themselves from the shadows, blocking your path";
 
 nextRoom = "room3.html";
-
+const room2Div = document.getElementById('room2');
+const hall = '../images/hall.png';
+const room = 'room2';
 const hintArray = ['hint1', 'hint2','hint3','hint4'];
+
+let shiftText = 'Another room escaped, another dimly lit corridor. The darkness deepens until you can barely keep track of the direction you walk.'
 
 let lightText = [
   `You attempt turning the ceiling light on. It clicks, but the switch is now broken and can't light the bulb.`,
@@ -53,31 +57,29 @@ const escapeDiv = document.getElementById('escape');
 
 //----------- Functions ------------//
 function clickLight() {
-  if (roomObjects[0].status1 == false || roomObjects[1].status1 == false) {
-    displayText(roomObjects[0].text[0]);
-    roomObjects[0].status1 = true;
-  } else if ((roomObjects[0].status1 == true) && (roomObjects[0].status2 == true)) {
+  if (checkInventory('Lightbulb')) {
     displayText(roomObjects[0].text[2]);
   } else if (roomObjects[1].status1 == true) {
     displayText(roomObjects[0].text[1]);
-    roomObjects[0].status2 = true;
     addItem(lightbulb);
+  } else {
+    displayText(roomObjects[0].text[0]);
   } 
 }
 
 function clickLamp() {
-  if (roomObjects[1].status1 == false || roomObjects[0].status1 == false) {
-    displayText(roomObjects[1].text[0]);
-    roomObjects[1].status1 = true;
-    roomObjects[0].status1 = true;
-  } else if((roomObjects[1].status1 == true) && (roomObjects[1].status2 == true)){
+  if (roomObjects[1].status2 == true) {
     displayText(roomObjects[1].text[2]);
-  } else if (roomObjects[0].status2 == true) {
+  } else if (checkInventory('Lightbulb')) {
     displayText(roomObjects[1].text[1]);
     roomObjects[1].status2 = true;
     roomObjects[4].status1 = true;
     roomObjects[5].status1 = true;
     roomObjects[6].status1 = true;
+    lightbulb.used = true;
+  } else {
+    displayText(roomObjects[1].text[0]);
+    roomObjects[1].status1 = true;
   }
 }
 
@@ -114,7 +116,10 @@ function clickEscape() {
   if (roomObjects[6].status1 == false) {
     displayText(roomObjects[6].text[0]);
   } else {
-    displayPrompt(roomObjects[6].text[1], );
+    displayText(roomObjects[6].text[1]);
+    const shiftOk = document.getElementById('okButton');
+    shiftOk.removeEventListener('click',okClick);
+    shiftOk.addEventListener('click', function(){transition(room2Div, hall, shiftText, nextRoom)});
   }
 }
 
@@ -148,5 +153,5 @@ shadow1Div.addEventListener('click', clickShadow1);
 shadow2Div.addEventListener('click', clickShadow2);
 escapeDiv.addEventListener('click', clickEscape);
 
-//-------------- Inovker!!! ---------------//
+//-------------- Invoker!!! ---------------//
 initialize('room2');
