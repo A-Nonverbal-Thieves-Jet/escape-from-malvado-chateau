@@ -1,12 +1,12 @@
 #room2 {
+  grid-column: 2/4;
+  grid-row: 2/3;
   display: grid;
   grid-template-columns: 1.7fr 1.65fr .8fr .35fr .2fr .6fr .75fr 3.55fr;
   grid-template-rows: 1.5fr 1.35fr .5fr .5fr .5fr .7fr .65fr 1.25fr;
 }
 
-#room2img {
-  height: auto;
-  width: 100%;
+#roomimg {
   grid-column: 1/9;
   grid-row: 1/9;
   z-index: -1;

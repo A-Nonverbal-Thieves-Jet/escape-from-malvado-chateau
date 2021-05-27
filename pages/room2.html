@@ -1,55 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <link rel="stylesheet" href="../CSS/reset.css">
-  <link rel="stylesheet" href="../CSS/roomTemplate.css">
-  <link rel="stylesheet" href="../CSS/global.css">
-  <link rel="stylesheet" href="../CSS/room2.css">
-  <title>Malvado Chateau</title>
-</head>
-<header>
-  <h2>Escape From Malvado Chateau</h2>
-  
-  <h1>Shadows</h1>
-
-  <div id="tasks">
-    <button id="hintButton">Hints</button>
-  </div>
-</header>
-<body>
-  <div id="room2">
-    <img id='room2img' src="../images/room-imgs/room2.png" alt="">
-    <div id="col1"></div>
-    <div id="col3"></div>
-    <div id="light"></div>
-    <div id="lamp"></div>
-    <div id="screen"></div>
-    <div id="chess"></div>
-    <div id="shadow1"></div>
-    <div id="shadow2"></div>
-    <div id="escape"></div>
-  </div>
-
-  <div id="taskbox"></div>
-
-  <section id="interface">
-    <div id="textContainer">
-      <p id="textContent">"An ominous living room waits before you. The inky darkness settling thick on the walls, and edges of the room. Figures peel themselves from the shadows, blocking your path"</p>
+  <head>
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <link rel="stylesheet" href="../CSS/roomTemplate.css">
+    <link rel="stylesheet" href="../CSS/global.css">
+    <link rel="stylesheet" href="../CSS/room2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Tangerine&display=swap" rel="stylesheet">
+    <title>Malvado Chateau</title>
+  </head>
+  <body>
+    <header>
+      <h2 id="title">Escape From Malvado Chateau</h2>
+      <h1 id="roomName">Room Name</h1>
+      <div id="tasks">
+        <button id="hintButton">Hints</button>
+      </div>
+    </header>
+    <div id="room2">
+      <img id='roomimg' src="../images/room-imgs/room2.png" alt="">
+      <div id="col1"></div>
+      <div id="col3"></div>
+      <div id="light"></div>
+      <div id="lamp"></div>
+      <div id="screen"></div>
+      <div id="chess"></div>
+      <div id="shadow1"></div>
+      <div id="shadow2"></div>
+      <div id="escape"></div>
     </div>
-    <div id="inventory">
-      <div id="slot1"></div>
-      <div id="slot2"></div>
-      <div id="slot3"></div>
-    </div>
+    <div id="taskbox"></div>
+    <section id="interface">
+      <div id="textContainer">
+        <p id="textContent"> "An ominous living room waits before you. The inky darkness settling thick on the walls, and edges of the room. Figures peel themselves from the shadows, blocking your path"</p>
+      </div>
+      <div id="inventory">
+        <h3>Inventory</h3>
+        <div id="slot1"></div>
+        <div id="slot2"></div>
+        <div id="slot3"></div>
+      </div>
 
-    <div id="audio">
-      <button id="playButton"><img onclick="playAudioAndDisplayMuteButton()" src="../images/music-on.png"  class ="muteImg"></button>
-      <button id="pauseButton" style="display:None"><img onclick="pauseAudioAndDisplayPlayButton()" src="../images/music off.png" class ="muteImg" ></button>
-      <audio id = "audioplayer" src="../audio/REPULSIVE - Forgotten [COPYRIGHT FREE HORROR MUSIC].mp3"></audio>
-    </div> 
-
-  </section>
-  <script src="../Js/global.js"></script>
-  <script src="../Js/room2.js"></script>
-</body>
+      <div id="audio">
+        <button id="playButton"><img onclick="playAudioAndDisplayMuteButton()" src="../images/music-on-blue.png"  class ="muteImg" id="on"></button>
+        <button id="pauseButton" style="display:None"><img onclick="pauseAudioAndDisplayPlayButton()" src="../images/music off-blue.png" class ="muteImg" id="off"></button>
+        <audio id = "audioplayer" src="../audio/REPULSIVE - Forgotten [COPYRIGHT FREE HORROR MUSIC].mp3"></audio>
+      </div> 
+    </section>
+    <script src="../Js/global.js"></script>
+    <script src="../Js/room2.js"></script>
+  </body>
 </html>
