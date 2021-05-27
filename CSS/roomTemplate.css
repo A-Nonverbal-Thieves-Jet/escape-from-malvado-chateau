@@ -10,7 +10,8 @@ header {
   }
   body{
     background-color:rgb(32, 51, 83) ;
-    width: 960px;
+    width: 100%;
+    height: 100%;
     margin: auto;
   }
   /* 
@@ -48,22 +49,27 @@ header {
     font-family: 'Cinzel', serif;
     width: 500px;
     height: 80px;
-    padding-top: 10px;
-    padding-left: 10px;
+    padding-top:20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-image: url(../images/interface-vectors/parchment-vector.png);
+    background-size: cover;
   }
   
   #roomx{
-    width: 672px;
-    height: 550px;
+    width: 90%;
+    height: 100%;
     margin-left: 8%;
-    margin-right: 22%;
     border: dashed 2px black;
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
   
   }
   #interface{
-  margin-top: 10px;
+  margin-top: 100px;
   display: flex;
-  
+  height: 100px;
   background-color:rgb(229, 209, 128);
   color: black;
   border-radius: 5px;
@@ -81,7 +87,7 @@ header {
     width: 300px;
     display: flex;
     justify-content: space-evenly;
-    padding:10px;
+    padding:18px;
   
   
   }
@@ -98,4 +104,50 @@ header {
     height: 50px;
     border-radius: 5px;
   } 
+  #on {
+    width: 75px;
+    height: 75px;
+    border: rgb(44, 140, 185) solid 3px;
+    border-radius: 50%;
+    
+    
+  }
+  
+  #off{
+    width: 75px;
+    height: 75px;
+    border: rgb(44, 140, 185) solid 3px;
+    border-radius: 50%;
+    
+   
+  }
+  #audio button{
+    
+    display:contents;
+   
+    
+  }
+  #off:hover{
+    border: antiquewhite solid 2px;
+    text-decoration: none;
+  }
+  
+  #on:hover{
+    border: antiquewhite solid 2px;
+    text-decoration: none;
+  }
 
+#taskbox {
+  
+  background-image: url(../images/interface-vectors/verticalParchment.png);
+  background-size: cover;
+ 
+  width: 25%;
+
+  
+}
+#roomimg{
+ width: 75%;
+
+
+}
