@@ -46,12 +46,12 @@ header {
   body{
     background-color:rgb(32, 51, 83) ;
     margin-bottom: 50px;
-    width: 960px;
-    background-image: url("../images/Background.png");
+    
+    background-image: url("../images/home-background-alt-2.jpeg");
     margin: auto;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+   
   }
   /* body *{
     border: 2px black solid;
