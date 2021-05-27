@@ -3,20 +3,20 @@
 //--------------- Global Vars -----------------//
 roomText = "An ominous living room waits before you. The inky darkness settling thick on the walls, and edges of the room. Figures peel themselves from the shadows, blocking your path";
 
-nextRoom = "room3.html"
+nextRoom = "room3.html";
 
 const hintArray = ['hint1', 'hint2','hint3','hint4'];
 
 let lightText = [
-  `You attempt turning the ceiling light on. It clicks, but the switch is now broken and can't light the bulb`,
-  `You carefully unscrew the light bulb, being careful not to drop it. The darkness in the room appears to intensify`,
-  `You've already taken the light bulb`
+  `You attempt turning the ceiling light on. It clicks, but the switch is now broken and can't light the bulb.`,
+  `You carefully unscrew the light bulb, being careful not to drop it. The darkness in the room appears to intensify.`,
+  `You've already taken the light bulb.`
 ];
 
 let lampText = [
   `You attempt to use the lamp, but the bulb is broken. You think to yourself - "Is there another bulb?"`,
   `You replace the light bulb and light floods into the living room. The shadows flash out of existence, clearing your path ahead.`,
-  `The light continues to shine dimly, enough to keep the darkness at bay, allowing you to proceed`
+  `The light continues to shine dimly, enough to keep the darkness at bay, allowing you to escape this room.`
 ];
 
 let screenText = [
@@ -30,13 +30,18 @@ let chessText = [
 
 let shadow1Text = [
   `The Shadow lingers around, seemingly harmless, but it wont let you leave.`,
-  `The shadow can no longer impede your escape`
+  `The shadow can no longer impede your escape.`
 ];
 
 let shadow2Text = [
   `The shadow distorts as you approach it, aggitated by your proximity. You cautiously back away.`,
-  `The shadow can no longer impede your escape`
+  `The shadow can no longer impede your escape.`
 ];
+
+let escapeText = [
+  `You attempt to escape the room, but the shadows block your path. The looming shadows make you think - "It's too dark in this room."`,
+  `The lamp's light flashes the darkness away, the path cleared ahead for you. You take your exit`
+]
 
 const lightDiv = document.getElementById('light');
 const lampDiv = document.getElementById('lamp');
@@ -44,6 +49,7 @@ const screenDiv= document.getElementById('screen');
 const chessDiv = document.getElementById('chess');
 const shadow1Div = document.getElementById('shadow1');
 const shadow2Div = document.getElementById('shadow2');
+const escapeDiv = document.getElementById('escape');
 
 //----------- Functions ------------//
 function clickLight() {
@@ -55,13 +61,15 @@ function clickLight() {
   } else if (roomObjects[1].status1 == true) {
     displayText(roomObjects[0].text[1]);
     roomObjects[0].status2 = true;
-  }
+    addItem(lightbulb);
+  } 
 }
 
 function clickLamp() {
   if (roomObjects[1].status1 == false || roomObjects[0].status1 == false) {
     displayText(roomObjects[1].text[0]);
     roomObjects[1].status1 = true;
+    roomObjects[0].status1 = true;
   } else if((roomObjects[1].status1 == true) && (roomObjects[1].status2 == true)){
     displayText(roomObjects[1].text[2]);
   } else if (roomObjects[0].status2 == true) {
@@ -69,6 +77,7 @@ function clickLamp() {
     roomObjects[1].status2 = true;
     roomObjects[4].status1 = true;
     roomObjects[5].status1 = true;
+    roomObjects[6].status1 = true;
   }
 }
 
@@ -101,13 +110,24 @@ function clickShadow2() {
   }
 }
 
+function clickEscape() {
+  if (roomObjects[6].status1 == false) {
+    displayText(roomObjects[6].text[0]);
+  } else {
+    displayPrompt(roomObjects[6].text[1], );
+  }
+}
+
 //--------- Objects ----------//
+const lightbulb = new Tool ('Lightbulb', '../images/interface-vectors/bulb-vector.png');
+
 const light = new Interactable ('light', lightText);
 const lamp = new Interactable ('lamp', lampText);
 const screens = new Interactable ('screen', screenText);
 const chess = new Interactable ('chess', chessText);
 const shadow1 = new Interactable ('shadow1', shadow1Text);
 const shadow2 = new Interactable ('shadow2', shadow2Text);
+const escapeDoor = new Interactable ('escape', escapeText);
 
 roomObjects = [
   light,
@@ -116,6 +136,7 @@ roomObjects = [
   chess,
   shadow1,
   shadow2,
+  escapeDoor,
 ];
 
 //------------ Event Listeners -------------//
@@ -125,6 +146,7 @@ screenDiv.addEventListener('click', clickScreen);
 chessDiv.addEventListener('click', clickChess);
 shadow1Div.addEventListener('click', clickShadow1);
 shadow2Div.addEventListener('click', clickShadow2);
+escapeDiv.addEventListener('click', clickEscape);
 
 //-------------- Inovker!!! ---------------//
 initialize('room2');

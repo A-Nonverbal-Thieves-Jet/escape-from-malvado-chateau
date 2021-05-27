@@ -1,137 +1,140 @@
 header {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: space-between;
+  color: rgb(229, 209, 128);
+  font-family: 'Tangerine', cursive;
+  margin-top: 25px; 
+}
 
-    width: 100%;
-    height: 200px;
-    display: flex;
-    justify-content: space-between;
-    color: rgb(229, 209, 128);
-    
-    font-family: 'Tangerine', cursive;
-    margin-top: 25px;
-    
-    
-    }
-    body{
-      background-color:rgb(32, 51, 83) ;
-      width: 960px;
-      margin: auto;
-      color: rgb(229, 209, 128);
+body{
+  background-color:rgb(32, 51, 83) ;
+  width: 960px;
+  margin: auto;
+  color: rgb(229, 209, 128);
 
-    }
+}
 
-    h1 {
-      font-size: 5em;
-      margin:auto;
-      text-align: center;
-    }
-     h2{
-       font-family: 'Cinzel', serif;
-      font-size: 1.5em;
-    }
+h1 {
+  font-size: 5em;
+  margin:auto;
+  text-align: center;
+}
 
-    img {
-      border:rgb(229, 209, 128) solid 1px;
-      border-radius: 1px;
-    }
+h2{
+  font-family: 'Cinzel', serif;
+  font-size: 1.5em;
+}
 
-    #stevenPicture{
-      margin-top:25px;
-      justify-content: flex-start;
-      flex-direction: row; 
-    }
-  
-     #stevenBio{
-      margin-top:25px;
-    } 
+img {
+  border:rgb(229, 209, 128) solid 1px;
+  border-radius: 1px;
+}
 
-    #steven {
-      float:left;
-      margin-right: 10px;
-      width: 15%;
-      height: 100px;
-    }
+/* ---------- Steven Section ---------- */
+#stevenPicture{
+  margin-top:25px;
+  justify-content: flex-start;
+  flex-direction: row;
+  height: 100px;
+  width: auto;
+}
 
-    #stevenInfo{
-      font-family: 'Cormorant Infant', serif;
-    }
+#steven {
+  float:left;
+  margin-right: 10px;
+  height: 100%;
+}
 
-    #joelPicture{
-      margin-top:25px;
-      justify-content: flex-start;
-      flex-direction: row;
-    }
-    #joelName{
-      text-align:right;
-    }
-  
-     #joelBio{
-      margin-top:25px;
-    } 
-  
-    #joel{
-      float:right;
-      margin-left: 10px;
-      width: 15%;
-      height: 100px;
-    }
+#stevenBio{
+  margin-top:25px;
+} 
 
-    #joelInfo{
-      font-family: 'Cormorant Infant', serif;
-    }
+#stevenInfo{
+  font-family: 'Cormorant Infant', serif;
+}
 
-    #barraPicture{
-      margin-top:25px;
-      justify-content: flex-start;
-      flex-direction: row; 
-    }
-  
-    #barraBio{
-      margin-top:25px;
-    }
+/* ---------- Joel Section ---------- */
+#joelPicture{
+  margin-top:25px;
+  height: 100px;
+  justify-content: flex-start;
+  flex-direction: row;
+}
 
-    #barra {
-      float:left;
-      margin-right: 10px;
-      width: 15%;
-      height: 100px;
-    }
+#joel{
+  float:right;
+  margin-left: 10px;
+  height: 100%;
+}
 
-    #barraInfo{
-      font-family: 'Cormorant Infant', serif;
-    }
-    
+#joelBio{
+  margin-top:25px;
+}
 
-    #revathiPicture{
-      margin-top:25px;
-      justify-content: flex-start;
-      flex-direction: row; 
-    }
-  
-    #revathiBio{
-      margin-top:25px;
-    }
+#joelName{
+  text-align:right;
+}
 
-    #revathi {
-      float:right;
-      margin-left: 10px;
-      width: 15%;
-      height: 100px;
-    }
+#joelInfo{
+  font-family: 'Cormorant Infant', serif;
+  text-align: right;
+}
 
-    #revathiInfo{
-      font-family: 'Cormorant Infant', serif;
-    }
+/* ---------- Barra Section ---------- */
+#barraPicture{
+  margin-top:25px;
+  justify-content: flex-start;
+  flex-direction: row; 
+}
 
-    #revathiName{
-      text-align:right;
-    }
+#barra {
+  float:left;
+  margin-right: 10px;
+  height: 100px;
+}
 
-    a:hover {
-      background-color: rgb(229, 209, 128);
-      color: black;
-    }
+#barraBio{
+  margin-top:25px;
+}
 
-    #home{
-      margin-top: 80px;
-    }
+#barraInfo{
+  font-family: 'Cormorant Infant', serif;
+}
+
+/* ----------  Section ---------- */
+#revathiPicture{
+  margin-top:25px;
+  justify-content: flex-start;
+  flex-direction: row; 
+}
+
+#revathi {
+  float:right;
+  margin-left: 10px;
+  height: 100px;
+}
+
+#revathiBio{
+  margin-top:25px;
+}
+
+#revathiName{
+  text-align:right;
+}
+
+#revathiInfo{
+  font-family: 'Cormorant Infant', serif;
+}
+
+/* ---------- Other Selectors ---------- */
+a:hover {
+  background-color: rgb(229, 209, 128);
+  color: black;
+}
+
+#home{
+  margin-top: 80px;
+}
 
