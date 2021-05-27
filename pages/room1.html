@@ -8,16 +8,23 @@
   <link rel="stylesheet" href="../CSS/room1.css" type="text/css">
   <title>Malvado Chateau</title>
 </head>
-<header>
+<!-- <header>
   <h2>Escape From Malvado Chateau</h2>
   <h1>Shadows</h1>
   <div id="tasks">
     <button id='hintButton'>Hints</button>
   </div>
-</header>
+</header> -->
 <body>
+  <header>
+    <h2 id="title">Escape From Malvado Chateau</h2>
+    <h1 id="roomName">Guest Room</h1>
+    <div id="tasks">
+      <button id="hintButton">Hints</button>
+    </div>
+  </header>
   <div id="room1">
-    <img id='room1img' src="../images/room-imgs/room1.png" alt="">
+    <img id='roomimg' src="../images/room-imgs/room1.png" alt="">
     <div id="col1"></div>
     <div id="fireplace"></div>
     <div id="door"></div>
@@ -30,20 +37,20 @@
 
   <section id="interface">
     <div id="textContainer">
-      <p id="textContent">You find yourself in a dingy room. The fire place offers no comfort, and a decrepit chair looms as if occupied. The dim light does little to calm your anxiety as the shadows seem to cling to you.</p>
+      <p id="textContent"> "You find yourself in a dingy room. The fire place offers no comfort, and a decrepit chair looms as if occupied. The dim light does little to calm your anxiety as the shadows seem to cling to you."</p>
     </div>
     <div id="inventory">
+      <h3>Inventory</h3>
       <div id="slot1"></div>
       <div id="slot2"></div>
       <div id="slot3"></div>
     </div>
 
     <div id="audio">
-      <button id="playButton"><img onclick="playAudioAndDisplayMuteButton()" src="../images/music-on.png"  class ="muteImg"></button>
-      <button id="pauseButton" style="display:None"><img onclick="pauseAudioAndDisplayPlayButton()" src="../images/music off.png" class ="muteImg" ></button>
+      <button id="playButton"><img onclick="playAudioAndDisplayMuteButton()" src="../images/music-on-blue.png"  class ="muteImg" id="on"></button>
+      <button id="pauseButton" style="display:None"><img onclick="pauseAudioAndDisplayPlayButton()" src="../images/music off-blue.png" class ="muteImg" id="off"></button>
       <audio id = "audioplayer" src="../audio/REPULSIVE - Forgotten [COPYRIGHT FREE HORROR MUSIC].mp3"></audio>
-    </div>
-
+    </div> 
   </section>
   <script src="../Js/global.js"></script>
   <script src="../Js/room1.js"></script>
