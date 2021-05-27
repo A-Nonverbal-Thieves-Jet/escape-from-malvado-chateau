@@ -104,7 +104,7 @@ function clickShadow2() {
 //--------- Objects ----------//
 const light = new Interactable ('light', lightText);
 const lamp = new Interactable ('lamp', lampText);
-const screen = new Interactable ('screen', screenText);
+const screens = new Interactable ('screen', screenText);
 const chess = new Interactable ('chess', chessText);
 const shadow1 = new Interactable ('shadow1', shadow1Text);
 const shadow2 = new Interactable ('shadow2', shadow2Text);
@@ -112,7 +112,7 @@ const shadow2 = new Interactable ('shadow2', shadow2Text);
 roomObjects = [
   light,
   lamp,
-  screen,
+  screens,
   chess,
   shadow1,
   shadow2,
