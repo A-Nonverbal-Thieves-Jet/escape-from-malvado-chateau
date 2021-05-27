@@ -169,12 +169,7 @@ function transition(div, image, text, room) {
   displayPrompt(text, room);
 }
 
-//toggle audio mute
-function audioControl() {
-
-}
-
-
+//----------Audio controls----------//
 function playAudioAndDisplayMuteButton() {
   // To play audio
   document.getElementById('audioplayer').play();

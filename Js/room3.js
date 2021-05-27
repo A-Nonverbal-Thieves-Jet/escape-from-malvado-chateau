@@ -3,7 +3,7 @@ console.log('the chateau breaths');
 //--------------- Global Vars -----------------//
 roomText = 'The dark hallways of the Malvado Chateau have deposited you in a lounge crowded with furniture and inhabited by a lonely doll. A door stands in the corner, barring your path.'
 
-nextRoom = ''
+nextRoom = 'victory.html'
 
 let dollText = [
   'There is a note in the hair of the doll. I bears a cryptic message: "I have a face that does not smile or frown. I have no mouth, but I make a familiar sound."',
@@ -103,9 +103,11 @@ function clickDrawer() {
 }
 
 function clickRug(){
+  if (!checkInventory('Lockpicks')) {
   displayText(roomObjects[3].text[0]);
   addItem(lockpick);
   rugDiv.removeEventListener('click',clickRug);
+  }
 }
 function clickPortrait(){
   console.log('clicked portrait!');
