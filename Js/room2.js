@@ -44,7 +44,7 @@ let shadow2Text = [
 ];
 
 let escapeText = [
-  `You attempt to escape the room, but the shadows block your path. The looming shadows make you think can you banish the ghost of so many years ago witha little illumination?`,
+  `You attempt to escape the room, but the shadows block your path. The looming shadows make you think: can you banish the ghost of so many years ago witha little illumination?`,
   `The lamp's soft light chases the darkness away, and the path ahead is clear. You can make your exit`
 ];
 

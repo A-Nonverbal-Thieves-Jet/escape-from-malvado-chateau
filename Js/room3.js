@@ -5,8 +5,8 @@ roomText = 'The dark hallways of the Malvado Chateau have deposited you in a lou
 
 nextRoom = 'victory.html'
 const room3Div = document.getElementById('room3');
-const stairs = '../images/hall.png';
-const creepyKid = '../images/hall.png';
+const stairs = '../images/BowShoot/stairsDark.png';
+const creepyKid = '../images/BowShoot/creepyKid.png';
 const room = 'room3';
 const hintArray = ['Search the room for oddities','The mirror looks suspicious.','Was that a lump in corner of the rug?'];
 let extraHint = 'Get the drawer open.'
@@ -17,7 +17,7 @@ let escape2 = 'Just as you reach for the door, you feel frozen in place. To your
 
 
 let dollText = [
-  'There is a note in the hair of the doll. I bears a cryptic message: "I have a face that does not smile or frown. I have no mouth, but I make a familiar sound."',
+  'There is a note in the hair of the doll. It bears a cryptic message: "I have a face that does not smile or frown. I have no mouth, but I make a familiar sound."',
   'The ominous doll sits on the table staring at you with knowing eyes.'
 ];
 
@@ -48,7 +48,7 @@ let portraitText = [
 let doorText = [
   'Where could this door lead? The lock seems to have no intention of imparting that information.',
   'You try your newfound lockpicks on the door\'s lock, but none of the pins find any purchase within.',
-  'As soon as the key is inserted, the lock clicks open without your turning it, clearing the way forward.'
+  'As soon as the key is inserted, the lock clicks open without you turning it, clearing the way forward.'
 ];
 
 let mirrorText = [
@@ -134,7 +134,11 @@ function clickPortrait(){
 }
 function clickDoor(){
   if (checkInventory('Lounge Key')) {
-    displayPrompt(roomObjects[5].text[2],'room3');
+    displayText(roomObjects[5].text[2]);
+    const switchOk = document.getElementById('okButton');
+    switchOk.textContent = 'Open the Door';
+    switchOk.removeEventListener('click',okClick);
+    switchOk.addEventListener('click', function(){endTransition(room3Div,stairs)});
   } else if (checkInventory('Lockpicks')){
     displayText(roomObjects[5].text[1]);
   } else {
