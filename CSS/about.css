@@ -47,6 +47,23 @@ img {
   margin-right: 14px;
   height: 97.5%;
 }
+#stevenName:link{
+  color: rgb(229, 209, 128);
+  text-decoration: none;
+}
+#stevenName:visited{
+  color: rgb(229, 209, 128);
+  text-decoration: none;
+}
+#stevenName:hover{
+  text-decoration: none;
+  color: antiquewhite;
+  
+}
+#stevenName{
+  font-family: 'Cinzel', serif;
+  font-size: 2em;
+}
 
 #stevenBio{
   align-self: flex-end;
@@ -74,15 +91,31 @@ img {
 
 #joelBio{
   align-self: flex-end;  
+  margin-bottom: 65px;
+}
+#joelName:link{
+  color: rgb(229, 209, 128);
+  text-decoration: none;
+}
+#joelName:visited{
+  color: rgb(229, 209, 128);
+  text-decoration: none;
+}
+#joelName:hover{
+  text-decoration: none;
+  color: antiquewhite;
+  
 }
 #joelName{
-  margin-bottom: 8px;
-  text-align:right;
+  font-family: 'Cinzel', serif;
+  font-size: 2em;
+  margin-left:73% ;
+
 }
 
 #joelInfo{
   text-align: right;
-  line-height: 1.9em;
+  line-height: 1.4em;
 }
 
 /* ---------- Barra Section ---------- */
@@ -96,6 +129,23 @@ img {
   float:left;
   margin-right: 14px;
   height: 97.5%;
+}
+#barraName:link{
+  color: rgb(229, 209, 128);
+  text-decoration: none;
+}
+#barraName:visited{
+  color: rgb(229, 209, 128);
+  text-decoration: none;
+}
+#barraName:hover{
+  text-decoration: none;
+  color: antiquewhite;
+  
+}
+#barraName{
+  font-family: 'Cinzel', serif;
+  font-size: 2em;
 }
 
 #barraBio{
@@ -123,9 +173,44 @@ img {
   align-self: flex-end;
 }
 
+#revathiPicture{
+  margin-top: 50px;
+  height: 150px;
+  display: flex;
+}
+
+#revathi{
+  margin-left: 14px;
+  height: 97.5%;
+}
+
+#revathiBio{
+  align-self: flex-end;  
+  margin-bottom: 50px;
+}
+#revathiName:link{
+  color: rgb(229, 209, 128);
+  text-decoration: none;
+}
+#revathiName:visited{
+  color: rgb(229, 209, 128);
+  text-decoration: none;
+}
+#revathiName:hover{
+  text-decoration: none;
+  color: antiquewhite;
+  
+}
 #revathiName{
-  margin-bottom: 8px;
-  text-align:right;
+  font-family: 'Cinzel', serif;
+  font-size: 2em;
+  margin-left:60% ;
+
+}
+
+#joelInfo{
+  text-align: right;
+  line-height: 1.4em;
 }
 
 #revathiInfo{
