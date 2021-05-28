@@ -32,7 +32,8 @@ let shadowText = [
 let escapeText = `You proceed down a dark hallway, pushing past your fear. You know only one truth: You must escape.`
 
 const hintArray = ['Check the fireplace?', 'Can you leave through the door?','Inspect the chandelier'];
-extraHint = 'Try the lever in the fireplace.';
+let extraHint = 'Try the lever in the fireplace.';
+
 const fireplaceDiv = document.getElementById('fireplace');
 const doorDiv = document.getElementById('door');
 const lightDiv = document.getElementById('light');
