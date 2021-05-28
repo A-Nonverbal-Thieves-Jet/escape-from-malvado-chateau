@@ -1,31 +1,32 @@
 'use strict'
 
 //--------------- Global Vars -----------------//
-roomText = "An ominous living room waits before you. The inky darkness settling thick on the walls, and edges of the room. Figures peel themselves from the shadows, blocking your path";
+roomText = "An ominous living room crowds around you, the inky darkness settling thick on the walls. Shadowy figures ward the door, blocking your path. They seem to feed on the darkness.";
 
 nextRoom = "room3.html";
 const room2Div = document.getElementById('room2');
 const hall = '../images/hall.png';
 const room = 'room2';
-const hintArray = ['hint1', 'hint2','hint3','hint4'];
+const hintArray = ['Banish the shadows.', 'Look for a light source.','Check the lamp?'];
+let extraHint = 'Find a lightbulb for the lamp.';
 
 let shiftText = 'Another room escaped, another dimly lit corridor. The darkness deepens until you can barely keep track of the direction you walk.'
 
 let lightText = [
-  `You attempt turning the ceiling light on. It clicks, but the switch is now broken and can't light the bulb.`,
-  `You carefully unscrew the light bulb, being careful not to drop it. The darkness in the room appears to intensify.`,
-  `You've already taken the light bulb.`
+  `You attempt turning the ceiling light on. The switch clicks, but apparently is broken. No light springs from the bulb.`,
+  `You carefully unscrew the light bulb, using both hands to avoid dropping it. The darkness in the room seems to intensify.`,
+  `You've already taken the light bulb. The broken lightswitch offers little.`
 ];
 
 let lampText = [
-  `You attempt to use the lamp, but the bulb is broken. You think to yourself - "Is there another bulb?"`,
-  `You replace the light bulb and light floods into the living room. The shadows flash out of existence, clearing your path ahead.`,
-  `The light continues to shine dimly, enough to keep the darkness at bay, allowing you to escape this room.`
+  `The lamp is in good condition, but the bulb is broken. The darkness threatens to consume you until you realize: could there be another bulb?"`,
+  `You replace the light bulb and light floods into the living room. The shadows retreat, clearing your path to the door.`,
+  `The light continues to shine dimly, just enough to keep the darkness at bay. The nearby door should be safe now, right?`
 ];
 
 let screenText = [
-  `The screen flickers, you swear you see a face blink on the screen for a second, but the screen fizzles out and shuts off.`,
-  `The screen seems to no longer function.`
+  `Whe you press the power button, screen flickers. You swear a face blinks on the screen for a second, but the screen fizzles out and shuts off.`,
+  `It seems you have witnessed the screen's last gasp. `
 ];
 
 let chessText = [
@@ -33,19 +34,19 @@ let chessText = [
 ];
 
 let shadow1Text = [
-  `The Shadow lingers around, seemingly harmless, but it wont let you leave.`,
-  `The shadow can no longer impede your escape.`
+  `A large shadow loiters to your left. It seems harmless, but it wont let you leave.`,
+  `This shadow no longer poses any threat to you.`
 ];
 
 let shadow2Text = [
-  `The shadow distorts as you approach it, aggitated by your proximity. You cautiously back away.`,
+  `The shadow distorts as you approach it, agitated by your proximity. You cautiously back away.`,
   `The shadow can no longer impede your escape.`
 ];
 
 let escapeText = [
-  `You attempt to escape the room, but the shadows block your path. The looming shadows make you think - "It's too dark in this room."`,
-  `The lamp's light flashes the darkness away, the path cleared ahead for you. You take your exit`
-]
+  `You attempt to escape the room, but the shadows block your path. The looming shadows make you think can you banish the ghost of so many years ago witha little illumination?`,
+  `The lamp's soft light chases the darkness away, and the path ahead is clear. You can make your exit`
+];
 
 const lightDiv = document.getElementById('light');
 const lampDiv = document.getElementById('lamp');
@@ -80,6 +81,7 @@ function clickLamp() {
   } else {
     displayText(roomObjects[1].text[0]);
     roomObjects[1].status1 = true;
+    hintArray.push(extraHint);
   }
 }
 
