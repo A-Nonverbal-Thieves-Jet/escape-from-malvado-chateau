@@ -4,6 +4,16 @@ console.log('the chateau breaths');
 roomText = 'The dark hallways of the Malvado Chateau have deposited you in a lounge crowded with furniture and inhabited by a lonely doll. A door stands in the corner, barring your path.'
 
 nextRoom = 'victory.html'
+const room3Div = document.getElementById('room3');
+const stairs = '../images/hall.png';
+const creepyKid = '../images/hall.png';
+const room = 'room3';
+const hintArray = ['hint1','hint2','hint3','hint4','hint5','hint6','hint7','hint8'];
+
+let escape1 = 'You emerge from the lounge, and see a faint glimpse of light ahead. Rounding the corner reveals a curved staircase and hope: A door to the outside.'
+
+let escape2 = 'Just as you reach for the door, you feel frozen in place. To your left, a mysterious figure robed in black seems to stare into your very soul. A young voice snickers, "Run while you can!"'
+
 
 let dollText = [
   'There is a note in the hair of the doll. I bears a cryptic message: "I have a face that does not smile or frown. I have no mouth, but I make a familiar sound."',
@@ -48,7 +58,6 @@ let sofaText = [
   'You take a moment to sit, and find that you have joined a stack of old documents. Their faded print offers no guidance.'
 ];
 
-const hintArray = [];
 
 const dollDiv = document.getElementById('doll');
 const clockDiv = document.getElementById('clock');
@@ -59,7 +68,7 @@ const doorDiv = document.getElementById('door');
 const mirrorDiv = document.getElementById('mirror');
 const sofaDiv = document.getElementById('sofa');
 
-//----------- Functions ------------//
+//----------- Puzzle Functions ------------//
 
 function clickDoll() {
   console.log('clicked doll!');
@@ -114,15 +123,15 @@ function clickPortrait(){
   if (roomObjects[2].status1 == false) {
     displayText(roomObjects[4].text[0]);
   } else if (roomObjects[4].status1 == false) {
-    displayText(roomObjects[4].text[1]); 
+    displayText(roomObjects[4].text[1]);
+    addItem(key); 
     roomObjects[4].status1 = true;
   } else {
     displayText(roomObjects[4].text[2]);
   }
 }
 function clickDoor(){
-  console.log('clicked door!');
-  if (roomObjects[4].status1 == true) {
+  if (checkInventory('Lounge Key')) {
     displayPrompt(roomObjects[5].text[2],'room3');
   } else if (checkInventory('Lockpicks')){
     displayText(roomObjects[5].text[1]);
@@ -138,9 +147,37 @@ function clickMirror(){
 function clickSofa(){
   displayText(roomObjects[7].text[0]);
 }
+//---------Ending Sequence-------//
+function endTransition(div, image) {
+  div.innerHTML = '';
+  const newImage = document.createElement('img');
+  newImage.setAttribute('id', 'transition');
+  newImage.setAttribute('src', image);
+  div.appendChild(newImage);
+
+  textBox.textContent = escape1;
+  const notOk = document.getElementById('okButton');
+  if (notOk) {
+    notOk.remove();
+  }
+  const endButton = document.createElement('button');
+  endButton.setAttribute('id','continueButton');
+  endButton.textContent = 'Descend the Stairs';
+  textContainer.appendChild(endButton);
+  endButton.addEventListener('click', endClick);
+}
+
+function endClick() {
+  transition(room3Div,creepyKid,escape2);
+  let finButton = document.getElementById('continueButton');
+  finButton.textContent = 'Escape the Chateau';
+  localStorage.clear();
+}
+
 
 //--------- objects ----------//
 const lockpick = new Tool ('Lockpicks','../images/interface-vectors/lockPick-vector.png');
+const key = new Tool ('Lounge Key', '../images/interface-vectors/key-vector.png');
 
 const doll = new Interactable ('doll',dollText);
 const clock= new Interactable ('clock',clockText);
