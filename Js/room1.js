@@ -47,10 +47,10 @@ function clickFireplace() {
   if (roomObjects[0].status1 == false) {
     displayText(roomObjects[0].text[0]);
     roomObjects[0].status1 = true;
+    hintArray.push(extraHint);
   } else if (roomObjects[0].status2 == false) {
     displayText(roomObjects[0].text[1]);
     roomObjects[0].status2 = true;
-    hintArray.push(extraHint);
   } else {
     displayText(roomObjects[0].text[2]);
   }
