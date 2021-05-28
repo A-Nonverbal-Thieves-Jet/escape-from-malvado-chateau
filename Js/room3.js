@@ -8,7 +8,8 @@ const room3Div = document.getElementById('room3');
 const stairs = '../images/hall.png';
 const creepyKid = '../images/hall.png';
 const room = 'room3';
-const hintArray = ['hint1','hint2','hint3','hint4','hint5','hint6','hint7','hint8'];
+const hintArray = ['Search the room for oddities','The mirror looks suspicious.','Was that a lump in corner of the rug?'];
+let extraHint = 'Get the drawer open.'
 
 let escape1 = 'You emerge from the lounge, and see a faint glimpse of light ahead. Rounding the corner reveals a curved staircase and hope: A door to the outside.'
 
@@ -23,24 +24,24 @@ let dollText = [
 let clockText = [
   'A grandfather clock with a large golden pendulum haunts the corner of the lounge',
   'You wrest open the old door of the grandfather clock, and find another note: "I am the guardian of the Chateau\'s wall, my heart is its treasure."',
-  'The clock remains open, but you don\'t spot any other oddities'
+  'The clock remains open, but only cogs and pendulum remain.'
 ];
 
 let drawerText = [
   'The table protecting the wall is littered with books and other oddities. An old lock seals the drawer',
   'The table must be the guardian, but the drawer is locked. Perhaps there is a way to open it hidden in the room.',
   'You fumble with the lockpicks for several minutes, at first to little effect. After some effort and a broken hook pick, the lock spirings free.',
-  'With the drawer open, it is revealed to be filled with doll heads. Another message is jammed between the heads: "I capture memories on my face. The people I know can only watch as the ages pass them by."',
+  'The open drawer reveals itself to be filled with doll heads. Another message is jammed between the heads: "I capture memories on my face. The people I know can only watch as the ages pass them by."',
   'You find the prospect of searching the dollheads further to be quite unsettling'
 ];
 
 let rugText = [
-  'You notice a lump in the rug as step around it. Pulling up at the corner of the rug reveals a set of picks and wrenches in a small leather pouch'
+  'You notice a lump in the rug as you step around it. Pulling up at the corner of the rug reveals a set of picks and wrenches in a small leather pouch'
 ];
 
 let portraitText = [
   'A painting looms on the wall, its grim inhabitants stare down at you.',
-  'You stop and consider the painting... it looks heavy, but there can be only one answer... You remove the painting from the wall, and find a shining key hidden behind it.',
+  'You stop and consider the painting. It looks heavy, but there can be only one answer. You remove the painting from the wall, and find a shining key hidden behind it.',
   'Having replaced the painting on the wall, you glance back at it once more. The men in the painting seem impressed somehow.'
 ];
 
@@ -107,6 +108,7 @@ function clickDrawer() {
       roomObjects[2].status2 = true;
     } else {
       displayText(roomObjects[2].text[1]);
+      hintArray.push(extraHint);
     }
   }
 }

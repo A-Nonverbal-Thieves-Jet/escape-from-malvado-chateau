@@ -1,24 +1,24 @@
 'use strict'
 
 //--------------- Global Vars -----------------//
-roomText = "You find yourself in a dingy room. The fire place offers no comfort, and a decrepit chair looms as if occupied. The dim light does little to calm your anxiety as the shadows seem to cling to you."
+roomText = "You find yourself in a dingy bedroom that smells faintly of mold. The fireplace offers no warmth, and a decrepit chair looms as if occupied. The dim light does little to calm your anxiety as the shadows seem to cling to you."
 
 nextRoom = "room2.html"
 let hall = '../images/hall.png';
 
 let fireplaceText = [
-  `You search the inside of the fireplace and see a charred lever in the corner.`,
-  `You cautiously pull the lever and hear the nearby door click.`,
-  `There is nothing more of interest in the fireplace.`,
+  `You search the inside of the fireplace and spot a charred lever in the corner.`,
+  `You give the lever a cautious pull and hear the nearby door click.`,
+  `There fireplace holds only long-deserted ashes now.`,
 ];
 
 let doorText = [
-  `There is a door in the corner of the room. The door won't budge, but there is no discernable lock.`,
-  `The door swings open of its own volition, as if inviting you to proceed`
+  `There is a door in the corner of the room. The door won't budge, but there is no discernable lock either.`,
+  `The door swings open of its own volition, as if inviting you to proceed.`
 ];
 
 let lightText = [
-  `A chandelier hangs from the ceiling.`
+  `An old chandelier hangs from the ceiling, giving off a weak veridian glow.`
 ];
   
 let chairText = [
@@ -26,13 +26,13 @@ let chairText = [
 ];
 
 let shadowText = [
-  `There are shadows all around you, they fill you with a sense of dread. The specters don't seem to be moving, but they don't seem to come from anything either.`
+  `There are shadows all around you, filling you with a sense of dread. The foul specters don't seem to react to your presence, but you are unable to trace their source.`
 ];
 
-let escapeText = `You proceed down a dark hallway, pushing past your fear. You know you must escape.`
+let escapeText = `You proceed down a dark hallway, pushing past your fear. You know only one truth: You must escape.`
 
-const hintArray = ['hint1', 'hint2','hint3','hint4'];
-
+const hintArray = ['Check the fireplace?', 'Can you leave through the door?','Inspect the chandelier'];
+extraHint = 'Try the lever in the fireplace.';
 const fireplaceDiv = document.getElementById('fireplace');
 const doorDiv = document.getElementById('door');
 const lightDiv = document.getElementById('light');
@@ -49,6 +49,7 @@ function clickFireplace() {
   } else if (roomObjects[0].status2 == false) {
     displayText(roomObjects[0].text[1]);
     roomObjects[0].status2 = true;
+    hintArray.push(extraHint);
   } else {
     displayText(roomObjects[0].text[2]);
   }
